@@ -1,13 +1,25 @@
 let shoppingList = new Map();
-shoppingList.set("groceries", ["Banana", "Pineapple"]);
+shoppingList.set('Banana', 3);
+shoppingList.set('Pineapple', 5);
+shoppingList.set('Pear', 2);
+shoppingList.set('Carrot', 10);
+shoppingList.set('Apple', 1.5);
 
-
-
-let iterator1 = shoppingList;
 let arrKey = [];
 let arrValue = [];
-for (let [key, value] of shoppingList.entries()) {
-    arrKey.push(`${key}: ${value}`);
+
+for (let keys of shoppingList) {
+    arrKey.push(`${keys[0]}`);
 }
-console.log(arrKey);
+arrKey.forEach((key) => { console.log("groceries: ", key ); });
+
+for (let values of shoppingList) {
+    arrValue.push(`${values[1]}`);
+}
+arrValue.forEach((values) => { console.log("amount: ", values)});
+
+for (let [keys, values] of shoppingList.entries()) {
+    console.log([keys, values]);
+}
+
 module.exports = { shoppingList, arrKey, arrValue };
