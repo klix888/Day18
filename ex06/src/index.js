@@ -6,11 +6,13 @@ rockStar.set("singer", "Mick Jagger");
 
 let newRock = new Map();
 
-for (let key of rockStar) {
+for (let [key, value] of rockStar.entries()) {
     if (key[0] > 'a') {
-        newRock.set(...rockStar);
+       newRock.set(key, value)
     }
-}
+};
+    
+
 console.log(newRock)
 
 module.exports = { rockStar, newRock };
